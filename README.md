@@ -1,0 +1,26 @@
+# Frontend
+
+UI for product image and video generation. Talks to a backend API.
+
+## Run
+
+```bash
+npm install
+npm run dev
+```
+
+Runs at `http://localhost:5173`. In dev, `/api` is proxied to `http://localhost:3000` so the backend can run on 3000 without CORS.
+
+## Env
+
+Copy `.env.example` to `.env`. Leave `VITE_API_BASE_URL` empty in dev (proxy handles it). For production, set it to your backend URL.
+
+- **Image API** – `VITE_IMAGE_GENERATE_PATH` (default `/api/images/generate`)
+- **Video API** – `VITE_VIDEO_GENERATE_PATH` (default `/api/videos/generate`)
+
+## What it does
+
+- **Image page** – Product URL and/or sample image (upload or paste). POST FormData to the image endpoint. Shows the returned image; download button saves it.
+- **Video page** – Image file and text prompt. POST FormData (`image`, `prompt`) to the video endpoint. Shows the returned video; download button saves it.
+
+Utility helpers live in `src/lib/utils.js` (API URLs, response parsing, download, blob cleanup).
