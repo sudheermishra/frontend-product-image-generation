@@ -9,11 +9,11 @@ npm install
 npm run dev
 ```
 
-Runs at `http://localhost:5173`. In dev, `/api` is proxied to `http://localhost:3000` so the backend can run on 3000 without CORS.
+Runs at `http://localhost:5173`. Frontend calls the backend directly; enable CORS on the backend for the frontend origin.
 
 ## Env
 
-Copy `.env.example` to `.env`. Leave `VITE_API_BASE_URL` empty in dev (proxy handles it). For production, set it to your backend URL.
+Copy `.env.example` to `.env`. Set `VITE_API_BASE_URL` to your backend URL (e.g. `http://localhost:3000` in dev).
 
 - **Image API** – `VITE_IMAGE_GENERATE_PATH` (default `/api/images/generate`)
 - **Video API** – `VITE_VIDEO_GENERATE_PATH` (default `/api/videos/generate`)
