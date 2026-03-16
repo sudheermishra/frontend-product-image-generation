@@ -21,6 +21,13 @@ export function getVideoGenerateUrl() {
   );
 }
 
+export function getLeonardoImageUrl() {
+  return buildApiUrl(
+    import.meta.env.VITE_LEONARDO_IMAGE_PATH,
+    "/api/images/leonardo"
+  );
+}
+
 
 export function downloadFile(src, filename) {
   if (!src || !filename) return;
